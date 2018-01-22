@@ -6,14 +6,13 @@ import java.util.ArrayList;
  * Created by Dave on 22/01/2018.
  */
 
-class WordCount {
+class WordCounter {
 
     String text;
 
-    public WordCount(String text){
+    public WordCounter(String text){
         this.text = text;
     }
-
 
     public String getText() {
         return this.text;
