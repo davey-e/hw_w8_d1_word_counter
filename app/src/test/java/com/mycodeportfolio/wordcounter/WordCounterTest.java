@@ -11,20 +11,34 @@ import static org.junit.Assert.assertEquals;
 
 public class WordCounterTest {
 
-    WordCounter text;
+    WordCounter textLong;
+    WordCounter textShort;
+    WordCounter textNoWords;
 
     @Before
     public void before(){
-        text = new WordCounter("It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity");
+        textLong = new WordCounter("It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity");
+        textShort = new WordCounter("Hello");
+        textNoWords = new WordCounter("");
     }
 
     @Test
     public void hasText(){
-        assertEquals("It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity", text.getText());
+        assertEquals("It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity", textLong.getText());
     }
 
     @Test
-    public void canCountWords(){
-        assertEquals(36, text.countWords());
+    public void canCountWordsLongText(){
+        assertEquals(36, textLong.countWords());
+    }
+
+    @Test
+    public void canCountWordsOneWord(){
+        assertEquals(1, textShort.countWords());
+    }
+
+    @Test
+    public void canCountWordsNoWords(){
+        assertEquals(0, textNoWords.countWords());
     }
 }

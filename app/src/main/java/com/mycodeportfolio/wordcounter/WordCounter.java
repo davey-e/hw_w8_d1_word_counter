@@ -19,7 +19,10 @@ class WordCounter {
     }
 
     public int countWords() {
-        int wordcount = this.text.split("\\w+").length;
+        if(this.text == ""){
+            return 0;
+        }
+        int wordcount = this.text.split("\\s+").length;
         return wordcount;
     }
 }
