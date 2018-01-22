@@ -1,8 +1,10 @@
 package com.mycodeportfolio.wordcounter;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -20,6 +22,9 @@ public class WordCounterActivity extends AppCompatActivity {
     }
 
     public void onCountWordsButtonClick(View button){
+        InputMethodManager imm = (InputMethodManager)getSystemService(
+                Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(countWordsResult.getWindowToken(), 0);
         WordCounter words = new WordCounter(textToCountWordsFor.getText().toString());
         Integer wordCount = words.countWords();
         countWordsResult.setText("Number of words = " + wordCount.toString());
