@@ -20,7 +20,7 @@ class WordCounter {
     }
 
     public int countWords() {
-        if(this.text == ""){
+        if(this.text.isEmpty()){
             return 0;
         }
         int wordcount = this.text.split("\\s+").length;
