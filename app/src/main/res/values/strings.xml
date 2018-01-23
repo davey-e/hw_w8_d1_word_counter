@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Word Counter</string>
-    <string name="button_text">Count Words</string>
+    <string name="button_text">Give Me The Stats!</string>
 </resources>
